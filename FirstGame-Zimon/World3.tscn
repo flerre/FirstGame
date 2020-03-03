@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://TeleportTaker.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TeleportGetter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Mark.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Spelare.tscn" type="PackedScene" id=4]
+[ext_resource path="res://WorldChanger.tscn" type="PackedScene" id=5]
+
+[node name="World3" type="Node2D"]
+
+[node name="Teleport" parent="." instance=ExtResource( 1 )]
+
+[node name="Teleport2" parent="." instance=ExtResource( 2 )]
+
+[node name="Mark" parent="." instance=ExtResource( 3 )]
+position = Vector2( 288, 352 )
+
+[node name="Mark3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 288, -64 )
+
+[node name="Mark2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1248, 352 )
+
+[node name="Spelare" parent="." instance=ExtResource( 4 )]
+position = Vector2( 64, 288 )
+
+[node name="WorldChanger" parent="." instance=ExtResource( 5 )]
+position = Vector2( -448, -576 )
+WorldChanger = "res://World.tscn"

@@ -1,0 +1,151 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Spelare.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tak.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://AntiGravKropp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://WorldChanger.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 608, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 256 )
+
+[node name="Värld" type="Node2D"]
+
+[node name="Spelare" parent="." instance=ExtResource( 1 )]
+position = Vector2( -101.465, 780.817 )
+
+[node name="Tak" parent="." instance=ExtResource( 2 )]
+position = Vector2( -397.146, 66.3841 )
+
+[node name="Tak2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -847.597, 473.206 )
+rotation = 1.5708
+
+[node name="Tak3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 427.377, 501.994 )
+rotation = 1.5708
+
+[node name="Mark" type="StaticBody2D" parent="."]
+position = Vector2( -431.055, 1317.54 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Mark"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 224, 0 )
+scale = Vector2( 19, 1 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mark"]
+position = Vector2( 224, 0 )
+shape = SubResource( 1 )
+
+[node name="WorldChanger" parent="." instance=ExtResource( 5 )]
+WorldChanger = "res://World2.tscn"
+
+[node name="SideGravKropp2" type="Area2D" parent="."]
+position = Vector2( -396.272, 704.341 )
+rotation = 0.72196
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideGravKropp2"]
+position = Vector2( 0, 224 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="SideGravKropp2"]
+self_modulate = Color( 1, 0.0666667, 0.721569, 1 )
+position = Vector2( 0, 224 )
+scale = Vector2( 1, 7.95161 )
+texture = ExtResource( 3 )
+
+[node name="SideGravKropp5" type="Area2D" parent="."]
+position = Vector2( -303.325, 297.145 )
+rotation = 0.72196
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideGravKropp5"]
+position = Vector2( 0, 224 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="SideGravKropp5"]
+self_modulate = Color( 1, 0.0666667, 0.721569, 1 )
+position = Vector2( 0, 224 )
+scale = Vector2( 1, 7.95161 )
+texture = ExtResource( 3 )
+
+[node name="SideGravKropp6" type="Area2D" parent="."]
+position = Vector2( -303.325, 297.145 )
+rotation = -1.0472
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideGravKropp6"]
+position = Vector2( 0, 224 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="SideGravKropp6"]
+self_modulate = Color( 1, 0.0666667, 0.721569, 1 )
+position = Vector2( 0, 224 )
+scale = Vector2( 1, 7.95161 )
+texture = ExtResource( 3 )
+
+[node name="SideGravKropp3" type="Area2D" parent="."]
+position = Vector2( -130.71, 182.067 )
+rotation = -1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideGravKropp3"]
+position = Vector2( 0, 224 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="SideGravKropp3"]
+self_modulate = Color( 1, 0.0666667, 0.721569, 1 )
+position = Vector2( 0, 224 )
+scale = Vector2( 1, 7.95161 )
+texture = ExtResource( 3 )
+
+[node name="SideGravKropp4" type="Area2D" parent="."]
+position = Vector2( -762.916, 1213.34 )
+rotation = -1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideGravKropp4"]
+position = Vector2( 0, 224 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="SideGravKropp4"]
+self_modulate = Color( 1, 0.0666667, 0.721569, 1 )
+position = Vector2( 0, 224 )
+scale = Vector2( 1, 7.95161 )
+texture = ExtResource( 3 )
+
+[node name="AntiGravKropp" parent="." instance=ExtResource( 4 )]
+position = Vector2( 126.991, 978.444 )
+
+[node name="AntiGravKropp3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 206.66, 531.413 )
+rotation = 0.523598
+
+[node name="AntiGravKropp2" parent="." instance=ExtResource( 4 )]
+position = Vector2( -674.123, 327.816 )
+[connection signal="body_entered" from="SideGravKropp2" to="Spelare" method="_on_SideGravKropp_body_entered"]
+[connection signal="body_entered" from="SideGravKropp5" to="Spelare" method="_on_SideGravKropp_body_entered"]
+[connection signal="body_entered" from="SideGravKropp6" to="Spelare" method="_on_SideGravKropp_body_entered"]
+[connection signal="body_entered" from="SideGravKropp3" to="Spelare" method="_on_SideGravKropp_body_entered"]
+[connection signal="body_entered" from="SideGravKropp4" to="Spelare" method="_on_SideGravKropp_body_entered"]
+[connection signal="body_entered" from="AntiGravKropp" to="Spelare" method="_on_AntiGravKropp_body_entered"]
+[connection signal="body_entered" from="AntiGravKropp3" to="Spelare" method="_on_AntiGravKropp_body_entered"]
+[connection signal="body_entered" from="AntiGravKropp2" to="Spelare" method="_on_AntiGravKropp_body_entered"]
