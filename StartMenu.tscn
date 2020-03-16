@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Theme/theme.tres" type="Theme" id=1]
 [ext_resource path="res://StartMenu.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Sky.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 border_width_left = 4
@@ -54,6 +55,20 @@ margin_top = 112.0
 margin_right = 83.0
 margin_bottom = 148.0
 text = "Quit"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Node2D"]
+offset = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="Node2D/ParallaxBackground"]
+position = Vector2( 304, 192 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
 [connection signal="pressed" from="CenterContainer/VBoxContainer/StartGameButton" to="." method="_on_StartGameButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/QuitGameButton" to="." method="_on_QuitGameButton_pressed"]

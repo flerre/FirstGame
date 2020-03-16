@@ -3,8 +3,8 @@ extends KinematicBody2D
 const UP = Vector2(0 ,-1)
 const GRAVITY = 25
 export var ACCELERATION = 70
-export var MAX_SPEED = 200
-export var CROUCH_JUMP = -10
+export var MAX_SPEED = 250
+export var CROUCH_JUMP = -8
 export var JUMP = -600
 export var MAX_JUMPHEIGHT = -850
 var CROUCH = 0
@@ -38,10 +38,9 @@ func _physics_process(delta):
 			
 			$Apple.play("Fall")
 			if Input.is_action_pressed("ui_right"):
-				motion.x = min(motion.x+ACCELERATION, MAX_SPEED)
+				motion.x = min(motion.x+ACCELERATION /2 , MAX_SPEED/2)
 			elif Input.is_action_pressed("ui_left"):
-				motion.x = max(motion.x-ACCELERATION, -MAX_SPEED)
-			
+				motion.x = max(motion.x-ACCELERATION /2 , -MAX_SPEED/2)
 			
 		else:
 			pass
@@ -50,8 +49,6 @@ func _physics_process(delta):
 				COUNT = 0
 				CROUCH = 0
 				
-				
-		
 	else:
 		if motion.y < 0:
 			$Apple.play("Jump")
