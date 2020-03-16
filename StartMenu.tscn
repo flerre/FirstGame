@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Theme/theme.tres" type="Theme" id=1]
+[ext_resource path="res://StartMenu.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+corner_detail = 80
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[node name="StartMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 278.0
+margin_top = 106.0
+margin_right = 361.0
+margin_bottom = 254.0
+
+[node name="GameName" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 83.0
+margin_bottom = 28.0
+custom_styles/normal = SubResource( 1 )
+text = "APPLEQUEST"
+
+[node name="StartGameButton" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 32.0
+margin_right = 83.0
+margin_bottom = 68.0
+text = "Play"
+
+[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 83.0
+margin_bottom = 108.0
+text = "Options"
+
+[node name="QuitGameButton" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 112.0
+margin_right = 83.0
+margin_bottom = 148.0
+text = "Quit"
+[connection signal="pressed" from="CenterContainer/VBoxContainer/StartGameButton" to="." method="_on_StartGameButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitGameButton" to="." method="_on_QuitGameButton_pressed"]
