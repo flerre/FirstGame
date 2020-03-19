@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/Idle0.png" type="Texture" id=2]
@@ -8,10 +8,11 @@
 [ext_resource path="res://Sprites/Player/Run3.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Player/Run4.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Player/Jump0.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Player/Jump1.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Player/Jump3.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Player/Jump4.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Player/Jump3.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Player/Jump4.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Player/Jump0.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Player/Jump1.png" type="Texture" id=12]
+[ext_resource path="res://Camera2D.gd" type="Script" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -25,12 +26,12 @@ animations = [ {
 "name": "Run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 5.0
@@ -43,10 +44,12 @@ height = 0.0
 [node name="Spelare" type="KinematicBody2D" groups=[
 "Spelare",
 ]]
+editor/display_folded = true
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+DeathScene = "res://Startmenu.tscn"
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
@@ -60,5 +63,5 @@ scale = Vector2( 0.7, 0.9 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 32, 0 )
 current = true
+script = ExtResource( 13 )
