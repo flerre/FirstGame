@@ -1,0 +1,66 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Player/Idle0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/Run0.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Player/Run1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/Run2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Player/Run3.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Player/Run4.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Player/Jump3.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Player/Jump4.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Player/Jump0.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Player/Jump1.png" type="Texture" id=12]
+[ext_resource path="res://Camera2D.gd" type="Script" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 32.0
+height = 0.0
+
+[node name="Spelare" type="KinematicBody2D" groups=[
+"Spelare",
+]]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+DeathScene = "res://Startmenu.tscn"
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Fall"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"Spelare",
+]]
+scale = Vector2( 0.7, 0.9 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 13 )

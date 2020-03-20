@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Teleportationhub.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 35.5862, 26.5968 )
+
+[node name="Teleportation" type="Area2D" groups=[
+"Spelare",
+]]
+position = Vector2( 961.059, 526.262 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 8.53201 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.569092, 0.568726 )
+scale = Vector2( 0.310708, 0.259078 )
+texture = ExtResource( 1 )

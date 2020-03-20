@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Player/Idle0.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.11511
+height = 76.6617
+
+[node name="AntiGravKropp" type="Area2D" groups=[
+"Spelare",
+]]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AntiGravKroppCollision" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.1, 5 )
+shape = SubResource( 1 )
+
+[node name="GravVisare" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+scale = Vector2( 0.129803, 8.5 )
+texture = ExtResource( 1 )

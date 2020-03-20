@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 224 )
+
+[node name="antigrav" type="Area2D"]
+self_modulate = Color( 0.623529, 0, 0, 1 )
+position = Vector2( 32, 224 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="antigravcollision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="antigravvisare" type="Sprite" parent="."]
+modulate = Color( 0.533333, 0, 0.0627451, 1 )
+position = Vector2( 0, 1.52588e-05 )
+scale = Vector2( 1, 7 )
+texture = ExtResource( 1 )
