@@ -12,7 +12,7 @@ export var Gravity = 10
 export var JumpForce = -400
 export var AntiJumpForce = 400
 export var Acceleration = 70
-export var Position1 = Vector2(96, 508)
+#export var Position1 = Vector2(96, 508)
 #export var Position2 = Vector2()
 
 export var Liv = 2
@@ -231,8 +231,8 @@ func _on_SizeNormalized_body_exited(body):
 		if Immune == true:
 			Immune = false
 			
-func _on_Teleportation_body_entered(body): 
-	set_position(Position1)
+#func _on_Teleportation_body_entered(body): 
+#	set_position(Position1)
 
 
 

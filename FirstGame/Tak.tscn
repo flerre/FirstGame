@@ -6,7 +6,6 @@
 extents = Vector2( 608, 32 )
 
 [node name="Tak" type="StaticBody2D"]
-editor/display_folded = true
 position = Vector2( 256, -64 )
 __meta__ = {
 "_edit_group_": true
