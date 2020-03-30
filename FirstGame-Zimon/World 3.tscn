@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Spelare.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tak.tscn" type="PackedScene" id=2]
+[ext_resource path="res://HealthPack.tscn" type="PackedScene" id=3]
+[ext_resource path="res://DANGERZOON1.tscn" type="PackedScene" id=4]
+
+[node name="World 3" type="Node2D"]
+
+[node name="Spelare" parent="." instance=ExtResource( 1 )]
+position = Vector2( -65.8901, 518.032 )
+DeathScene = "res://StartMenu2.tscn"
+
+[node name="Tak" parent="." instance=ExtResource( 2 )]
+position = Vector2( 181.022, -261.67 )
+
+[node name="Tak2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -216.368, 260.906 )
+rotation = -1.57079
+
+[node name="Tak4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1055.77, 247.274 )
+rotation = -1.57079
+
+[node name="Tak3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 210.559, 608.533 )
+
+[node name="HealthPack" parent="." instance=ExtResource( 3 )]
+position = Vector2( 124.602, 541.346 )
+
+[node name="DangerZoon" parent="." instance=ExtResource( 4 )]
+position = Vector2( 763.431, 536.223 )
+[connection signal="body_entered" from="HealthPack" to="Spelare" method="_on_HealthPack_body_entered"]
+[connection signal="body_exited" from="HealthPack" to="Spelare" method="_on_HealthPack_body_exited"]
+[connection signal="body_entered" from="DangerZoon" to="Spelare" method="_on_DangerZoon_body_entered"]
+[connection signal="body_exited" from="DangerZoon" to="Spelare" method="_on_DangerZoon_body_exited"]

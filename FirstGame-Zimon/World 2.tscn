@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Tak.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Spelare.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SideGravKropp.tscn" type="PackedScene" id=3]
+[ext_resource path="res://AntiGravKropp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://WorldChanger.tscn" type="PackedScene" id=5]
+
+[node name="World 2" type="Node2D"]
+
+[node name="Tak" parent="." instance=ExtResource( 1 )]
+position = Vector2( -28.78, -20.6919 )
+
+[node name="Tak5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 371.376, -471.199 )
+
+[node name="Tak7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 143.473, -375.797 )
+rotation = 1.57079
+
+[node name="Tak6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 938.485, -285.696 )
+rotation = -1.57079
+
+[node name="Tak3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 145.984, 179.949 )
+rotation = 1.5708
+
+[node name="Tak4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 936.307, 605.066 )
+rotation = -1.5708
+
+[node name="Tak2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 276.799, 649.149 )
+
+[node name="Spelare" parent="." instance=ExtResource( 2 )]
+position = Vector2( 403.113, 542.667 )
+
+[node name="SideGravKropp" parent="." instance=ExtResource( 3 )]
+position = Vector2( 743.831, 68.2617 )
+
+[node name="SideGravKropp2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 287.025, 75.4367 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 63.663
+margin_top = 22.204
+margin_right = 278.663
+margin_bottom = 58.204
+rect_scale = Vector2( 5, 5 )
+text = "Här vänder vi lite på gravitationen prova neråt pil"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AntiGravKropp" parent="." instance=ExtResource( 4 )]
+position = Vector2( 517.311, 469.719 )
+rotation = 1.5708
+
+[node name="WorldChanger" parent="." instance=ExtResource( 5 )]
+position = Vector2( 358.488, -237.192 )
+WorldChanger = "res://World 4.tscn"
+[connection signal="body_entered" from="SideGravKropp" to="Spelare" method="_on_SideGravKropp_body_entered"]
+[connection signal="body_entered" from="SideGravKropp2" to="Spelare" method="_on_SideGravKropp2_body_entered"]
+[connection signal="body_entered" from="AntiGravKropp" to="Spelare" method="_on_AntiGravKropp_body_entered"]

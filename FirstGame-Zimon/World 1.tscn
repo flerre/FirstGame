@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Tak.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Spelare.tscn" type="PackedScene" id=2]
+[ext_resource path="res://WorldChanger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SizeIncrease.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SizeDecreased.tscn" type="PackedScene" id=5]
+[ext_resource path="res://SizeNormalized.tscn" type="PackedScene" id=6]
+
+[node name="World 1" type="Node2D"]
+
+[node name="Tak" parent="." instance=ExtResource( 1 )]
+position = Vector2( 270.354, 491.698 )
+
+[node name="Spelare" parent="." instance=ExtResource( 2 )]
+position = Vector2( 82.0218, 416.261 )
+
+[node name="Tak2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1488.38, 491.698 )
+
+[node name="WorldChanger" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2144.26, 314.942 )
+WorldChanger = "res://World 2.tscn"
+
+[node name="SizeIncrease" parent="." instance=ExtResource( 4 )]
+position = Vector2( 452.78, 420.534 )
+
+[node name="SizeDecreased" parent="." instance=ExtResource( 5 )]
+position = Vector2( 900.976, 416.795 )
+
+[node name="SizeNormalized" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1348, 420.896 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 144.367
+margin_top = 258.75
+margin_right = 345.367
+margin_bottom = 300.75
+rect_scale = Vector2( 5, 5 )
+text = "VÄlkommen till storleksvärlden"
+[connection signal="body_entered" from="WorldChanger" to="Spelare" method="_on_WorldChanger_body_entered"]
+[connection signal="body_entered" from="SizeIncrease" to="Spelare" method="_on_SizeIncrease_body_entered"]
+[connection signal="body_exited" from="SizeIncrease" to="Spelare" method="_on_SizeIncrease_body_exited"]
+[connection signal="body_entered" from="SizeDecreased" to="Spelare" method="_on_SizeDecreased_body_entered"]
+[connection signal="body_exited" from="SizeDecreased" to="Spelare" method="_on_SizeDecreased_body_exited"]
+[connection signal="body_entered" from="SizeNormalized" to="Spelare" method="_on_SizeNormalized_body_entered"]
+[connection signal="body_exited" from="SizeNormalized" to="Spelare" method="_on_SizeNormalized_body_exited"]

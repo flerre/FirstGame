@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Teleportation2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://WorldChanger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tak.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Spelare.tscn" type="PackedScene" id=4]
+
+[node name="World 4" type="Node2D"]
+
+[node name="Tak" parent="." instance=ExtResource( 3 )]
+position = Vector2( 206.355, 270.564 )
+
+[node name="Tak2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 592.381, 708.507 )
+rotation = -1.57079
+
+[node name="Tak3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 208.627, 706.575 )
+rotation = -1.57079
+
+[node name="Tak5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 981.248, 734.636 )
+rotation = -1.57079
+
+[node name="Tak7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 641.886, -102.853 )
+rotation = -3.14159
+
+[node name="Tak8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 234.415, 1043.3 )
+
+[node name="Tak6" parent="." instance=ExtResource( 3 )]
+position = Vector2( -147.635, 684.991 )
+rotation = -1.57079
+
+[node name="Tak4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 184.77, 656.931 )
+
+[node name="Spelare" parent="." instance=ExtResource( 4 )]
+position = Vector2( -56.9272, 200.131 )
+
+[node name="WorldChanger" parent="." instance=ExtResource( 2 )]
+position = Vector2( 497.585, 563.476 )
+scale = Vector2( 0.5, 0.5 )
+WorldChanger = "res://World 3.tscn"
+
+[node name="Teleportation2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 140.869, 218.12 )
+scale = Vector2( 0.2, 0.2 )
+Teleport = Vector2( 295.826, 189.856 )
+
+[node name="Teleportation3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 138.597, 611.189 )
+scale = Vector2( 0.2, 0.2 )
+Teleport = Vector2( 282.127, 583.707 )
+
+[node name="Teleportation4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 143.174, 997.443 )
+scale = Vector2( 0.2, 0.2 )
+Teleport = Vector2( 662.278, 974.132 )
+
+[node name="Teleportation5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 518.034, 998.565 )
+scale = Vector2( 0.2, 0.2 )
+Teleport = Vector2( -60.352, 583.707 )
+
+[node name="Teleportation6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 915.648, 1001.99 )
+scale = Vector2( 0.2, 0.2 )
+Teleport = Vector2( 669.127, 196.706 )
+
+[node name="Teleportation7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 917.92, 613.461 )
+scale = Vector2( 0.2, 0.2 )
+Teleport = Vector2( -70.626, 980.982 )
+
+[node name="Teleportation8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 915.648, 221.545 )
+scale = Vector2( 0.2, 0.2 )
+Teleport = Vector2( 285.551, 970.708 )
+
+[node name="Teleportation9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 532.35, 221.762 )
+scale = Vector2( 0.2, 0.2 )
+Teleport = Vector2( 669.127, 587.131 )

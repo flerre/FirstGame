@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Ångra dig.gd" type="Script" id=1]
+
+[node name="Ångramig" type="Control"]
+margin_left = -1.05261
+margin_right = 1020.95
+margin_bottom = 602.0
+script = ExtResource( 1 )
+WorldChanger = "res://Startmenu.tscn"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_left = 65.2629
+margin_top = 85.263
+margin_right = 921.263
+margin_bottom = 513.263
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 305.0
+margin_top = 195.0
+margin_right = 550.0
+margin_bottom = 233.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+modulate = Color( 1, 0, 0, 1 )
+margin_right = 245.0
+margin_bottom = 14.0
+text = "MEN STICK DÅ OM DU INTE SKA SPELA"
+
+[node name="angra" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 245.0
+margin_bottom = 38.0
+text = "JAG ÅNGRA MIG, TA MIG TILLBAKA"
+[connection signal="pressed" from="CenterContainer/VBoxContainer/angra" to="." method="_on_angra_pressed"]

@@ -5,6 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="DangerZoon" type="Area2D"]
+editor/display_folded = true
 self_modulate = Color( 0.568627, 0.298039, 0.298039, 1 )
 position = Vector2( 50, 50 )
 scale = Vector2( 3, 3 )
