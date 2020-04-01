@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Tak.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Spelare.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://RigidBody2D.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 19.8151
+
+[node name="World 5" type="Node2D"]
+position = Vector2( -137.318, -176.552 )
+
+[node name="Tak" parent="." instance=ExtResource( 1 )]
+position = Vector2( -735.459, 843.147 )
+
+[node name="Tak7" parent="." instance=ExtResource( 1 )]
+position = Vector2( -661.795, 1296.76 )
+rotation = -0.785397
+
+[node name="Tak8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 469.016, 1295.47 )
+rotation = -2.35619
+
+[node name="Tak3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 455.337, 844.016 )
+
+[node name="Tak2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1097.81, 482.084 )
+rotation = -1.57079
+
+[node name="Tak6" parent="." instance=ExtResource( 1 )]
+position = Vector2( -292.659, -311.662 )
+rotation = -3.14159
+
+[node name="Tak5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 911.061, -313.379 )
+rotation = -3.14159
+
+[node name="Tak4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1275.46, 45.6094 )
+rotation = -4.71238
+
+[node name="Spelare" parent="." instance=ExtResource( 2 )]
+position = Vector2( -766.016, 738.521 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( -481.487, 792.224 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D"]
+position = Vector2( 0.855545, -0.327919 )
+scale = Vector2( 0.678664, 0.607323 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource( 1 )

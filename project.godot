@@ -16,7 +16,11 @@ _global_script_class_icons={
 [application]
 
 config/name="FirstGame"
+<<<<<<< Updated upstream
 run/main_scene="res://World.tscn"
+=======
+run/main_scene="res://StartMenu2.tscn"
+>>>>>>> Stashed changes
 config/icon="res://icon.png"
 
 [rendering]
